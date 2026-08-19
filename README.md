@@ -72,6 +72,16 @@ python evaluate.py --input path/to/your/file.rti --weights output/decoder_weight
   ```
 - `latent_map.png`: A 4-channel RGBA PNG containing the spatial latent variables for each pixel.
 
+## Viewing in the browser
+
+Package the latent map with [rtiprep](https://github.com/mfindeisen/rtiprep):
+
+```bash
+rtiprep -tiff -weights output/decoder_weights.json output/latent_map.png
+```
+
+[modernRtiViewer](https://github.com/mfindeisen/modernRtiViewer) renders the GeoTIFF in WebGL. In [rtiDb](https://github.com/mfindeisen/rtiDb), Admin → Upload → Neural RTI accepts the PNG and JSON directly (the server runs `rtiprep` for you).
+
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
